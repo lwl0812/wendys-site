@@ -4,7 +4,7 @@
       <div class="side-bar-top">
         <div class="portrait-wrapper">
           <div class="portrait-img">
-            <img class="img" src="logo.jpg" alt="">
+            <img class="img" src="wendys-site/logo.jpg" alt="">
           </div>
           <div class="blog-user-name">{{ userName }}</div>
         </div>
@@ -27,7 +27,7 @@
     
     <div class="content">
       <div class="blog-wrapper" v-for="page in pages" v-if="page.frontmatter.description">
-        <h1 class="title"><a :href="$site.base + page.path">{{ page.title }}</a></h1>
+        <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.title }}</a></h1>
         <p class="description">{{ page.frontmatter.description }}</p>
         <p class="info">
           <span class="last-update">更新时间：{{ page.lastUpdated }}</span>

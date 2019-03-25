@@ -121,12 +121,6 @@ export default {
         margin-right: 10px;
       }
     }
-    .description {
-      max-width: 400px;
-      // white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   }
 }
 

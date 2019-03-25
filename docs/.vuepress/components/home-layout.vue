@@ -4,7 +4,7 @@
       <div class="side-bar-top">
         <div class="portrait-wrapper">
           <div class="portrait-img">
-            <img class="img" src="wendys-site/logo.jpg" alt="">
+            <img class="img" src="/wendys-site/logo.jpg" alt="">
           </div>
           <div class="blog-user-name">{{ userName }}</div>
         </div>

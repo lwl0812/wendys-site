@@ -12,8 +12,8 @@
       <div class="side-bar-bottom">
         <h3 class="title">标签</h3>
         <ul class="list">
-          <li class="list-item" v-for="page in pages" v-if="page.frontmatter.tag">
-            <a href="javascript:void(0)">{{ page.frontmatter.tag }}</a>
+          <li class="list-item" v-for="tag in tags" v-if="tag">
+            <a href="javascript:void(0)">{{ tag.tag }}</a>
           </li>
         </ul>
         <h3 class="title">档案</h3>
@@ -49,7 +49,16 @@ export default {
       return this.$site.pages;
     },
     tags() {
-      return this.$site.pages;
+      const tags = [];
+      const tagsMap = {};
+      this.$site.pages.forEach(page => {
+        const tag = page.frontmatter.tag;
+        if (tag && !tagsMap[tag]) {
+          tags.push({tag: tag});
+          tagsMap[tag] = tag;
+        }
+      });
+      return tags;
     }
   },
 }

@@ -103,6 +103,7 @@ export default {
   }
 }
 .content {
+  max-width: 100%;
   min-height: 700px;
   flex: 1;
   border: 1px solid #2fd085;
@@ -122,7 +123,7 @@ export default {
     }
     .description {
       max-width: 400px;
-      white-space: nowrap;
+      // white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }

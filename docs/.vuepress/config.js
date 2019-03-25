@@ -1,5 +1,5 @@
 module.exports = {
-  // base: '/wendys-blog/',
+  base: '/wendys-site',
   title: '晴天&Sunny',
   // description: '晴天&Sunny',
   userName: '晴天&Sunny',

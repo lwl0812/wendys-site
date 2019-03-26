@@ -30,7 +30,7 @@
         <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.title }}</a></h1>
         <p class="description">{{ page.frontmatter.description }}</p>
         <p class="info">
-          <span class="last-update">更新时间：{{ page.lastUpdated }}</span>
+          <span class="last-update">更新时间：{{ getDateTime(page.lastUpdated) }}</span>
           <span>标签：#{{page.frontmatter.tag}}</span>
         </p>
       </div>
@@ -59,6 +59,11 @@ export default {
         }
       });
       return tags;
+    }
+  },
+  methods: {
+    getDateTime(date = new Date()) {
+      return (new Date(date)).toLocaleString();
     }
   },
 }

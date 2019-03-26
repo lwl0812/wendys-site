@@ -27,7 +27,7 @@
     
     <div class="content">
       <div class="blog-wrapper" v-for="page in pages" v-if="page.frontmatter.description">
-        <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.title }}</a></h1>
+        <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.frontmatter._title }}</a></h1>
         <p class="description">{{ page.frontmatter.description }}</p>
         <p class="info">
           <span class="last-update">更新时间：{{ getDateTime(page.lastUpdated) }}</span>

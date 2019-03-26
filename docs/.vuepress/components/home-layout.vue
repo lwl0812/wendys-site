@@ -13,7 +13,7 @@
         <h3 class="title">标签</h3>
         <ul class="list">
           <li class="list-item" v-for="tag in tags" v-if="tag">
-            <a href="javascript:void(0)">{{ tag.tag }}</a>
+            <a href="javascript:void(0)">{{ tag.tag }}({{ tag.blogNum }})</a>
           </li>
         </ul>
         <h3 class="title">档案</h3>
@@ -31,7 +31,7 @@
         <p class="description">{{ page.frontmatter.description }}</p>
         <p class="info">
           <span class="last-update">更新时间：{{ getDateTime(page.lastUpdated) }}</span>
-          <span>标签：#{{page.frontmatter.tag}}</span>
+          <span>标签：#{{ page.frontmatter.tag }}</span>
         </p>
       </div>
     </div>
@@ -52,11 +52,18 @@ export default {
       const tags = [];
       const tagsMap = {};
       this.$site.pages.forEach(page => {
-        const tag = page.frontmatter.tag;
-        if (tag && !tagsMap[tag]) {
-          tags.push({tag: tag});
-          tagsMap[tag] = tag;
-        }
+        const tagArr = page.frontmatter.tag && page.frontmatter.description && page.frontmatter.tag.split(',') || [];
+        tagArr.forEach(tag => {
+          if (tag) {
+            if (!tagsMap[tag]) {
+              tagsMap[tag] = tag;
+              tags.push({tag: tag, blogNum: 1});
+            } else {
+              const index = tags.findIndex(existTag => existTag.tag === tag);
+              tags[index].blogNum += 1;
+            }
+          }
+        });
       });
       return tags;
     }

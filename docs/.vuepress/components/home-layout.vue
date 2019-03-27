@@ -12,7 +12,7 @@
       <div class="side-bar-bottom">
         <h3 class="title">标签</h3>
         <ul class="list">
-          <li class="list-item" v-for="tag in tags" v-if="tag">
+          <li class="list-item" v-for="tag in tags" :key="tag.tag" v-if="tag" @click="filterPagesByTag(tag)">
             <a href="javascript:void(0)">{{ tag.tag }}({{ tag.blogNum }})</a>
           </li>
         </ul>
@@ -26,6 +26,7 @@
     </div>
     
     <div class="content">
+      <!-- <navigation></navigation> -->
       <div class="blog-wrapper" v-for="page in pages" v-if="page.frontmatter.description">
         <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.frontmatter._title }}</a></h1>
         <p class="description">{{ page.frontmatter.description }}</p>
@@ -39,14 +40,31 @@
 </template>
 
 <script>
+import navigation from './navigation';
+
 export default {
   name: 'home-layout',
+  components: {
+    navigation,
+  },
+  data() {
+    return {
+      filterByTag: ''
+    }
+  },
   computed: {
     userName() {
       return this.$site.pages.find(page => page.title === 'Home').frontmatter.userName;
     },
     pages() {
-      return this.$site.pages;
+      return this.filterByTag ? this.filterPages : this.$site.pages;
+    },
+    filterPages() {
+      return this.$site.pages.filter(page => {
+        if (page.frontmatter && page.frontmatter.tag && page.frontmatter.description && page.frontmatter.tag.includes(this.filterByTag)) {
+          return page;
+        }
+      });
     },
     tags() {
       const tags = [];
@@ -71,7 +89,10 @@ export default {
   methods: {
     getDateTime(date = new Date()) {
       return (new Date(date)).toLocaleString();
-    }
+    },
+    filterPagesByTag(tag) {
+      this.filterByTag = tag.tag;
+    },
   },
 }
 </script>

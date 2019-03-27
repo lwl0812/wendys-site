@@ -30,6 +30,121 @@ let routerNameMap = {
   'front-end': '前端相关',
   'other-resources': '其他资源',
   'javascript': 'JavaScript',
+  'you-dont-know-js': '你不知道的JavaScript',
+  '01.up&going': '01.开篇'
+}
+
+const fileTraverse = (filePath) => {
+  // 根据文件路径读取文件，返回文件列表
+  const files = fs.readdirSync(filePath);
+  // 遍历读取到的文件列表
+  files.forEach(fileName => {
+    // 获取当前文件的绝对路径
+    var fileDir = path.join(filePath, fileName);
+    // 根据文件路径获取文件信息，返回一个fs.Stats对象
+    let stats = fs.statSync(fileDir);
+    var isFile = stats.isFile(); // 是文件
+    var isDir = stats.isDirectory(); // 是文件夹
+    if(isFile && _isMarkdownFile(fileName)){
+      const content = yamlFront.loadFront(fs.readFileSync(fileDir));
+      const dirArray = _getDirArray(fileDir, targetFilePath);
+      const indexMap = {}
+      let _router = router;
+      let concatLink = '/blog';
+      let text;
+      dirArray.forEach((dir, index) => {
+        if (dir) {
+          let link = `/${dir}`;
+          concatLink += link;
+          if (index === 1) { // 第一个
+            const _index = _router.findIndex(r => r.link === concatLink);
+            if (_index > -1) {
+              _router = _router[_index];
+            } else {
+              _router.push({
+                text: routerNameMap[dir] || content._title,
+                link: concatLink,
+                items: [],
+              });
+              _router = _router[_router.length - 1];
+            }
+          }
+          if (index === 2) { // 第二个
+            const _index = _router.items.findIndex(r => r.link === concatLink);
+            if (_index > -1) {
+              _router = _router.items[_index];
+            } else {
+              _router.items.push({
+                text: routerNameMap[dir] || content._title,
+                link: concatLink,
+                items: [],
+              });
+              _router = _router.items[_router.items.length - 1];
+            }
+          }
+          if (index === dirArray.length - 1) { // 最后一个
+            text = content._title;
+            const _index = _router.items.findIndex(r => r.link === concatLink);
+            if (_index < 0 && text) {
+              _router.items.push({
+                text: routerNameMap[dir] || content._title,
+                link: concatLink,
+              });
+            }
+          }
+        }
+        // if (dir) {
+        //   let link;
+        //   if (index !== dirArray.length - 1) { // 不是最后一个
+        //     link = `/${dir}`;
+        //   }
+        //   else { // 最后一个
+        //     link = `/${dir}`;
+        //     text = content._title;
+        //   }
+        //   concatLink += link;
+          
+        //   if (index === 1) {
+        //     const _index = _router.findIndex(r => r.link === concatLink);
+        //     if (_index > -1) {
+        //       _router = _router[_index];
+        //     } else {
+        //       _router.push({
+        //         text: routerNameMap[dir] || text,
+        //         link: concatLink,
+        //         items: [],
+        //       });
+        //       _router = _router[_router.length - 1];
+        //     }
+        //   }
+        //   else {
+        //     const _index = _router.items.findIndex(r => r.link === concatLink);
+        //     if (_index > -1) {
+        //       _router = _router.items[_index];
+        //     } else {
+        //       _router.items.push({
+        //         text: routerNameMap[dir] || text,
+        //         link: concatLink,
+        //         items: [],
+        //       });
+        //       _router = _router.items[_router.items.length - 1];
+        //     }
+        //   }
+        // }
+      });
+    }
+    if(isDir){
+      fileTraverse(fileDir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件
+    }
+  });
+};
+
+fileTraverse(targetFilePath);
+
+console.log(JSON.stringify(router), 'router---')
+
+module.exports = {
+  router,
 }
 
 // function readdir(filePath) {
@@ -107,73 +222,3 @@ let routerNameMap = {
 //   await fileTraverse(targetFilePath);
 //   return router;
 // }
-
-const fileTraverse = (filePath) => {
-  // 根据文件路径读取文件，返回文件列表
-  const files = fs.readdirSync(filePath);
-  // 遍历读取到的文件列表
-  files.forEach(fileName => {
-    // 获取当前文件的绝对路径
-    var fileDir = path.join(filePath, fileName);
-    // 根据文件路径获取文件信息，返回一个fs.Stats对象
-    let stats = fs.statSync(fileDir);
-    var isFile = stats.isFile(); // 是文件
-    var isDir = stats.isDirectory(); // 是文件夹
-    if(isFile && _isMarkdownFile(fileName)){
-      const content = yamlFront.loadFront(fs.readFileSync(fileDir));
-      const dirArray = _getDirArray(fileDir, targetFilePath);
-      const indexMap = {}
-      let _router = router;
-      let concatLink = '/blog';
-      let text;
-      dirArray.forEach((dir, index) => {
-        if (dir) {
-          let link;
-          if (index !== dirArray.length - 1) {
-            link = `/${dir}`;
-          } else {
-            link = `/${dir}`;
-            text = content._title;
-          }
-          concatLink += link;
-          
-          if (index === 1) {
-            const _index = _router.findIndex(r => r.link === concatLink);
-            if (_index > -1) {
-              _router = _router[_index];
-            } else {
-              _router.push({
-                text: routerNameMap[dir] || text,
-                link: concatLink,
-                items: [],
-              });
-              _router = _router[_router.length - 1];
-            }
-          }
-          else {
-            const _index = _router.items.findIndex(r => r.link === concatLink);
-            if (_index > -1) {
-              _router = _router.items[_index];
-            } else {
-              _router.items.push({
-                text: routerNameMap[dir] || text,
-                link: concatLink,
-                items: [],
-              });
-              _router = _router.items[_router.items.length - 1];
-            }
-          }
-        }
-      });
-    }
-    if(isDir){
-      fileTraverse(fileDir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件
-    }
-  });
-};
-
-fileTraverse(targetFilePath);
-
-module.exports = {
-  router,
-}

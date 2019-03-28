@@ -34,8 +34,6 @@ function integrateGitalk(router) {
   }
   function renderGitalk(fullPath) {
     const gitalk = new Gitalk({
-      clientID: '9040880b86188d9044b1',
-      clientSecret: 'd52722a1f2085199122711b1ec109d19d9c2f069', // come from github development
       repo: 'wendys-site',
       owner: 'lwl0812',
       admin: ['lwl0812'],
@@ -47,10 +45,19 @@ function integrateGitalk(router) {
   }
 }
 
+function addBaiduTongji() {
+  let _hmt = _hmt || [];
+  let hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0ab7c7b698bcb0bf87628f079a988818";
+  let s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+}
+
 export default ({Vue, options, router}) => {
   try {
-    document && integrateGitalk(router)
+    document && integrateGitalk(router);
+    document && addBaiduTongji();
   } catch (e) {
-    console.error(e.message)
+    console.error(e.message);
   }
 }

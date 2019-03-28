@@ -30,8 +30,8 @@ let routerNameMap = {
   'front-end': '前端相关',
   'other-resources': '其他资源',
   'javascript': 'JavaScript',
-  'you-dont-know-js': '你不知道的JavaScript',
-  '01.up&going': '01.开篇'
+  'tools': '工具类',
+  'develop-related': '开发相关',
 }
 
 const fileTraverse = (filePath) => {
@@ -140,8 +140,6 @@ const fileTraverse = (filePath) => {
 };
 
 fileTraverse(targetFilePath);
-
-console.log(JSON.stringify(router), 'router---')
 
 module.exports = {
   router,

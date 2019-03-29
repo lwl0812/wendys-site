@@ -32,6 +32,7 @@ let routerNameMap = {
   'javascript': 'JavaScript',
   'tools': '工具类',
   'develop-related': '开发相关',
+  'effective-front-end': '高效前端学习笔记',
 }
 
 const fileTraverse = (filePath) => {
@@ -52,86 +53,89 @@ const fileTraverse = (filePath) => {
       let _router = router;
       let concatLink = '/blog';
       let text;
-      dirArray.forEach((dir, index) => {
-        if (dir) {
-          let link = `/${dir}`;
-          concatLink += link;
-          if (index === 1) { // 第一个
-            const _index = _router.findIndex(r => r.link === concatLink);
-            if (_index > -1) {
-              _router = _router[_index];
-            } else {
-              _router.push({
-                text: routerNameMap[dir] || content._title,
-                link: concatLink,
-                items: [],
-              });
-              _router = _router[_router.length - 1];
+      if (content.public) {
+        dirArray.forEach((dir, index) => {
+          if (dir) {
+            let link = `/${dir}`;
+            concatLink += link;
+            if (index === 1) { // 第一个
+              const _index = _router.findIndex(r => r.link === concatLink);
+              if (_index > -1) {
+                _router = _router[_index];
+              } else {
+                _router.push({
+                  text: routerNameMap[dir] || content._title,
+                  link: concatLink,
+                  items: [],
+                });
+                _router = _router[_router.length - 1];
+              }
+            }
+            if (index === 2) { // 第二个
+              const _index = _router.items.findIndex(r => r.link === concatLink);
+              if (_index > -1) {
+                _router = _router.items[_index];
+              } else {
+                _router.items.push({
+                  text: routerNameMap[dir] || content._title,
+                  link: concatLink,
+                  items: [],
+                });
+                _router = _router.items[_router.items.length - 1];
+              }
+            }
+            if (index === dirArray.length - 1) { // 最后一个
+              text = content._title;
+              const _index = _router.items.findIndex(r => r.link === concatLink);
+              if (_index < 0 && text) {
+                _router.items.push({
+                  text: routerNameMap[dir] || content._title,
+                  link: concatLink,
+                });
+              }
             }
           }
-          if (index === 2) { // 第二个
-            const _index = _router.items.findIndex(r => r.link === concatLink);
-            if (_index > -1) {
-              _router = _router.items[_index];
-            } else {
-              _router.items.push({
-                text: routerNameMap[dir] || content._title,
-                link: concatLink,
-                items: [],
-              });
-              _router = _router.items[_router.items.length - 1];
-            }
-          }
-          if (index === dirArray.length - 1) { // 最后一个
-            text = content._title;
-            const _index = _router.items.findIndex(r => r.link === concatLink);
-            if (_index < 0 && text) {
-              _router.items.push({
-                text: routerNameMap[dir] || content._title,
-                link: concatLink,
-              });
-            }
-          }
-        }
-        // if (dir) {
-        //   let link;
-        //   if (index !== dirArray.length - 1) { // 不是最后一个
-        //     link = `/${dir}`;
-        //   }
-        //   else { // 最后一个
-        //     link = `/${dir}`;
-        //     text = content._title;
-        //   }
-        //   concatLink += link;
           
-        //   if (index === 1) {
-        //     const _index = _router.findIndex(r => r.link === concatLink);
-        //     if (_index > -1) {
-        //       _router = _router[_index];
-        //     } else {
-        //       _router.push({
-        //         text: routerNameMap[dir] || text,
-        //         link: concatLink,
-        //         items: [],
-        //       });
-        //       _router = _router[_router.length - 1];
-        //     }
-        //   }
-        //   else {
-        //     const _index = _router.items.findIndex(r => r.link === concatLink);
-        //     if (_index > -1) {
-        //       _router = _router.items[_index];
-        //     } else {
-        //       _router.items.push({
-        //         text: routerNameMap[dir] || text,
-        //         link: concatLink,
-        //         items: [],
-        //       });
-        //       _router = _router.items[_router.items.length - 1];
-        //     }
-        //   }
-        // }
-      });
+          // if (dir) {
+          //   let link;
+          //   if (index !== dirArray.length - 1) { // 不是最后一个
+          //     link = `/${dir}`;
+          //   }
+          //   else { // 最后一个
+          //     link = `/${dir}`;
+          //     text = content._title;
+          //   }
+          //   concatLink += link;
+            
+          //   if (index === 1) {
+          //     const _index = _router.findIndex(r => r.link === concatLink);
+          //     if (_index > -1) {
+          //       _router = _router[_index];
+          //     } else {
+          //       _router.push({
+          //         text: routerNameMap[dir] || text,
+          //         link: concatLink,
+          //         items: [],
+          //       });
+          //       _router = _router[_router.length - 1];
+          //     }
+          //   }
+          //   else {
+          //     const _index = _router.items.findIndex(r => r.link === concatLink);
+          //     if (_index > -1) {
+          //       _router = _router.items[_index];
+          //     } else {
+          //       _router.items.push({
+          //         text: routerNameMap[dir] || text,
+          //         link: concatLink,
+          //         items: [],
+          //       });
+          //       _router = _router.items[_router.items.length - 1];
+          //     }
+          //   }
+          // }
+        });
+      }
     }
     if(isDir){
       fileTraverse(fileDir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件

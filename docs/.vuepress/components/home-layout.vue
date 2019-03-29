@@ -27,7 +27,7 @@
     
     <div class="content">
       <!-- <navigation></navigation> -->
-      <div class="blog-wrapper" v-for="page in pages" v-if="page.frontmatter.description">
+      <div class="blog-wrapper" v-for="page in pages" v-if="page.frontmatter.public">
         <h1 class="title"><a :href="'/wendys-site' + page.path">{{ page.frontmatter._title }}</a></h1>
         <p class="description">{{ page.frontmatter.description }}</p>
         <p class="info">
@@ -70,7 +70,7 @@ export default {
       const tags = [];
       const tagsMap = {};
       this.$site.pages.forEach(page => {
-        const tagArr = page.frontmatter.tag && page.frontmatter.description && page.frontmatter.tag.split(',') || [];
+        const tagArr = page.frontmatter.tag && page.frontmatter.public && page.frontmatter.tag.split(',') || [];
         tagArr.forEach(tag => {
           if (tag) {
             if (!tagsMap[tag]) {

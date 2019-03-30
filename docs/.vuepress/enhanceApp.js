@@ -53,10 +53,24 @@ function addBaiduTongji() {
   s.parentNode.insertBefore(hm, s);
 }
 
+import VueHighlightJS from 'vue-highlight.js';
+// Highlight.js languages (All languages)
+import 'vue-highlight.js/lib/allLanguages';
+/*
+* Import Highlight.js theme
+* Find more: https://highlightjs.org/static/demo/
+*/
+import 'highlight.js/styles/default.css';
+
+import Element from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 export default ({Vue, options, router}) => {
   try {
     document && integrateGitalk(router);
     document && addBaiduTongji();
+    Vue.use(VueHighlightJS);
+    Vue.use(Element);
   } catch (e) {
     console.error(e.message);
   }

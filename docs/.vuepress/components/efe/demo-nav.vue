@@ -16,7 +16,7 @@ export default {
 <style lang="stylus" scoped>
 .nav {
   padding: 5px 10px;
-  background: #000;
+  background: #06a992;
   color: #fff;
 }
 .nav .nav-item {

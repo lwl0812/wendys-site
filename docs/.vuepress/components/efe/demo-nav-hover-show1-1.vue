@@ -1,22 +1,28 @@
 <template>
   <div class="demo2">
-    <ul class="nav">
-      <li class="nav-item item-home">首页</li>
-      <li class="nav-item item-demo1">导航高亮</li>
-      <li class="menu">
-        <ul class="menu-ul">
-          <li>导航高亮-下级1</li>
-          <li>导航高亮-下级2</li>
-        </ul>
-      </li>
-      <li class="nav-item item-demo2">导航悬浮显示下级</li>
-      <li class="menu">
-        <ul class="menu-ul">
-          <li>导航悬浮显示下级-下级1</li>
-          <li>导航悬浮显示下级-下级2</li>
-        </ul>
-      </li>
-    </ul>
+    <nav>
+      <ul class="nav-ul">
+        <li class="nav-item item-home">首页</li>
+      </ul>
+      <ul class="nav-ul">
+        <li class="nav-item item-demo1">导航高亮</li>
+        <li class="menu">
+          <ul class="menu-ul">
+            <li>导航高亮-下级1</li>
+            <li>导航高亮-下级2</li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav-ul">
+        <li class="nav-item item-demo2">导航悬浮显示下级</li>
+        <li class="menu">
+          <ul class="menu-ul">
+            <li>导航悬浮显示下级-下级1</li>
+            <li>导航悬浮显示下级-下级2</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -27,13 +33,18 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.nav {
+nav {
+  font-size: 0;
+}
+.nav-ul {
+  display: inline-block;
   position: relative;
   padding: 5px 10px;
+  font-size: 16px;
   background: #06a992;
   color: #fff;
 }
-.nav .nav-item {
+.nav-ul .nav-item {
   display: inline-block;
   margin-right: 10px;
   list-style: none;
@@ -43,7 +54,7 @@ export default {
     opacity: 1;
   }
 }
-.demo2 .nav .nav-item.item-demo2 {
+.demo2 .nav-ul .nav-item.item-demo2 {
   opacity: 1;
 }
 
@@ -56,6 +67,7 @@ export default {
   position: absolute;
   top: 44px;
   min-width: 100px;
+  white-space: nowrap;
   color: #000;
   border: 1px solid #000;
   box-shadow: 0 0 5px;

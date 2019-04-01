@@ -95,8 +95,4 @@ export default {
 .content pre code, .content pre[class*="language-"] code {
   color: #2d2929;
 }
-
-ul {
-  list-style: none;
-}
 </style>

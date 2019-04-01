@@ -43,7 +43,7 @@ export default {
       padding: 0;
       margin: 0;
       border-bottom: none;
-      font-size: 18px;
+      font-size: 16px;
     }
     small {
       font-size: 14px;
@@ -60,7 +60,7 @@ export default {
       0 1px 2px 0 rgba(232, 237, 250, 0.5);
     .code-content {
       display: flex;
-      justify-content: center;
+      /*justify-content: center;*/
       align-items: center;
       box-sizing: border-box;
       padding: 4%;

@@ -12,6 +12,8 @@
         香蕉（学名：Musa nana Lour.）芭蕉科芭蕉属植物，又指其果实，热带地区广泛种植。
       </p>
     </div>
+    <!--加了个 tr 实现一行两列布局-->
+    <span class="tr"></span>
     <div class="col col3">
       <p class="title">水蜜桃</p>
       <p class="des">
@@ -29,7 +31,7 @@
 
 <script>
   export default {
-    name: 'demo-cols-same-height2',
+    name: 'demo-cols-same-height3',
   };
 </script>
 
@@ -44,4 +46,15 @@
     padding: 10px
     border 1px solid #000
     border-radius 5px
+  .tr
+    display none
+  @media (max-width: 500px)
+    .demo
+      display block // <-- 可以覆盖原来的样式，实现响应式布局
+    .col
+      display block // <-- 可以覆盖原来的样式，实现响应式布局
+      width: 100%
+  @media (max-width: 1024px) and (min-width: 501px)
+    .tr
+      display table-row // <-- 实现一行两列布局
 </style>

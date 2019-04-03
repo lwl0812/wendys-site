@@ -1,7 +1,7 @@
 ---
 home: true
 layout: home-layout
-userName: 晴天&Sunny
+userName: Wendy Lu
 heroImage: /logo.png
 # actionText: 快速上手 →
 # actionLink: /zh/guide/

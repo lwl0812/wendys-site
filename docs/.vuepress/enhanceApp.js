@@ -34,6 +34,8 @@ function integrateGitalk(router) {
   }
   function renderGitalk(fullPath) {
     const gitalk = new Gitalk({
+      clientID: '704b524eb0855faf361c',
+      clientSecret: '16c177dce94c89c71c8f4c33f03869511ce05411', // come from github development
       repo: 'wendys-site',
       owner: 'lwl0812',
       admin: ['lwl0812'],

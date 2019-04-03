@@ -95,4 +95,12 @@ export default {
 .content pre code, .content pre[class*="language-"] code {
   color: #2d2929;
 }
+
+.content pre,
+.content pre[class*="language-"] {
+  &:not(:first-child) {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
 </style>

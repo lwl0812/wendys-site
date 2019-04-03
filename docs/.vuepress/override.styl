@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .content:not(.custom).content:not(.custom) {
   max-width 100%
 }
@@ -34,4 +38,10 @@
 .content:not(.custom) > h5,
 .content:not(.custom) > h6 {
   color: #3eaf7c;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
 }

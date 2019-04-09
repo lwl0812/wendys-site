@@ -34,8 +34,6 @@ function integrateGitalk(router) {
   }
   function renderGitalk(fullPath) {
     const gitalk = new Gitalk({
-      clientID: '704b524eb0855faf361c',
-      clientSecret: '16c177dce94c89c71c8f4c33f03869511ce05411', // come from github development
       repo: 'wendys-site',
       owner: 'lwl0812',
       admin: ['lwl0812'],
@@ -50,7 +48,12 @@ function integrateGitalk(router) {
 function addBaiduTongji() {
   let _hmt = _hmt || [];
   let hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?0ab7c7b698bcb0bf87628f079a988818";
+  let key = '';
+  const { host } = window.location;
+  if (host === 'lwl0812.github.io') {
+    key = '0ab7c7b698bcb0bf87628f079a988818';
+  }
+  hm.src = `https://hm.baidu.com/hm.js?${key}`;
   let s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 }

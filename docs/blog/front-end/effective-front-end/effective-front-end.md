@@ -18,8 +18,8 @@ public: true
 
 目录：
 
-- 第 1 章 HTML/CSS 优化
-  - [1.1 能用 HTML/CSS 解决的问题就不要用 JS](1.1.html-css-optimize.md)
-  - [1.2 优化 HTML 标签](1.2.html-css-optimize.md)
-  - [1.3 用 CSS 画一个三角形](1.3.html-css-optimize.md)
-  - [1.4 尽可能地使用伪元素](1.4.html-css-optimize.md)
+- # 第 1 章 HTML/CSS 优化
+  - ## [1.1 能用 HTML/CSS 解决的问题就不要用 JS](1.1.html-css-optimize.md)
+  - ## [1.2 优化 HTML 标签](1.2.html-css-optimize.md)
+  - ## [1.3 用 CSS 画一个三角形](1.3.html-css-optimize.md)
+  - ## [1.4 尽可能地使用伪元素](1.4.html-css-optimize.md)

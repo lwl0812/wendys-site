@@ -33,6 +33,7 @@ let routerNameMap = {
   'tools': '工具类',
   'develop-related': '开发相关',
   'effective-front-end': '高效前端学习笔记',
+  'interview-related': '面试相关'
 }
 
 const fileTraverse = (filePath) => {

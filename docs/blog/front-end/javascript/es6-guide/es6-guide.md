@@ -11,4 +11,5 @@ public: true
 - # [02. let 和 const](02.let-const.md)
 - # [03. 变量的解构赋值](03.destructuring.md)
 - # [04. 字符串扩展](04.string-extend.md)
+- # [05. 字符串的新增方法](05.string-methods.md)
 - # [13. Proxy](13.proxy.md)

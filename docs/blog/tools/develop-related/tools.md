@@ -1,5 +1,5 @@
 ---
-_title: 工具类汇总
+_title: 开发工具类汇总
 description: 日常工具类使用汇总，nrm、nginx、git...
 sidebar: auto
 displayAllHeaders: true
@@ -7,7 +7,7 @@ tag: 工具
 public: true
 ---
 
-# 工具类汇总
+# 开发工具类汇总
 
 -----
 

@@ -13,7 +13,7 @@ public: true
 
 可以将复制剪切的内容实时保存起来，想用的时候，调用 APP 取出，非常方便。
 
-![img](images/01.png)
+![img](./images/01.png)
 
 ## [synergy(多台电脑鼠标键盘共享)](https://symless.com/synergy)
 

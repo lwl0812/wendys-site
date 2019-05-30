@@ -14,8 +14,18 @@
 
 ### 其他
 
-#### [浏览器工作原理](https://lwl0812.github.io/wendys-site/front-end/other-resources/02.how-browsers-work.html)
+* [浏览器工作原理](https://lwl0812.github.io/wendys-site/front-end/other-resources/02.how-browsers-work.html)
 
 ## 工具类
 
+* [工具类汇总](https://lwl0812.github.io/wendys-site/blog/tools/develop-related/tools.html)
+
+## 疑难杂症
+
+* [疑难杂症](https://lwl0812.github.io/wendys-site/blog/tools/develop-related/tricks.html)
+
 ## 收藏
+
+## 面试题汇总
+
+

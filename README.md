@@ -12,6 +12,9 @@
 * [《高效前端》学习笔记](https://lwl0812.github.io/wendys-site/blog/front-end/effective-front-end/effective-front-end.html)
 * [图片优化](https://lwl0812.github.io/wendys-site/blog/front-end/other-resources/03.image-optimize.html)
 
+### 面试题汇总
+
+
 ### 其他
 
 * [浏览器工作原理](https://lwl0812.github.io/wendys-site/front-end/other-resources/02.how-browsers-work.html)
@@ -26,6 +29,6 @@
 
 ## 收藏
 
-## 面试题汇总
+
 
 

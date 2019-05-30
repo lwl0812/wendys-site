@@ -3,7 +3,7 @@ _title: 小技巧&疑难杂症汇总
 description: 小技巧汇总...
 sidebar: auto
 displayAllHeaders: true
-tag: 工具
+tag: 疑难杂症
 public: true
 ---
 

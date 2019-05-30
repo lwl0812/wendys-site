@@ -4,11 +4,52 @@ description: 日常工具类使用汇总，nrm、nginx、git...
 sidebar: auto
 displayAllHeaders: true
 tag: 工具
+public: true
 ---
 
 # 工具类汇总
 
 -----
+
+## nvm
+
+### [安装](https://github.com/nvm-sh/nvm)
+
+```bash
+# 终端执行下面命令
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+```
+
+```bash
+# 进入根目录
+cd ~
+# 打开 .bash_profile。 如果没有这个文件，可通过 touch .bash_profile 新建一个
+open .bash_profile
+```
+
+复制下面代码，粘贴到 .bash_profile 中。
+
+```bash
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+保存。
+
+```bash
+# 终端执行下面命令
+command -v nvm
+```
+
+如果输出 nvm 信息，说明安装成功。
+
+如果没输出，复制下面代码，粘贴到 .bash_profile 文件到最下面。
+
+```bash
+source ~/.bashrc
+```
+
+再次执行 command -v nvm 命令。
 
 ## nrm
 
@@ -93,3 +134,7 @@ cat usr/local/etc/nginx/nginx.conf
 ```bash
 vi usr/local/etc/nginx/nginx.conf
 ```
+
+## FileZilla
+
+管理服务器上文件

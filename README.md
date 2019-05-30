@@ -22,7 +22,7 @@
 ## 工具类
 
 * [开发工具类汇总](https://lwl0812.github.io/wendys-site/blog/tools/develop-related/tools.html)
-* [其他实用工具类汇总]()
+* [其他实用工具类汇总](https://lwl0812.github.io/wendys-site/blog/tools/others/tools.html)
 
 ## 疑难杂症
 

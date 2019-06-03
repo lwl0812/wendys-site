@@ -31,6 +31,7 @@ let routerNameMap = {
   'other-resources': '其他资源',
   'javascript': 'JavaScript',
   'tools': '工具类',
+  'vscode': 'vscode',
   'develop-related': '开发相关',
   'effective-front-end': '高效前端学习笔记',
   'interview-related': '面试相关'

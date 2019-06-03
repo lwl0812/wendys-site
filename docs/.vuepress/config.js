@@ -2,7 +2,7 @@ const router = require('./router/router.js');
 
 module.exports = {
   base: '/wendys-site/',
-  title: 'Wendy\'s one peace',
+  title: 'lwl0812',
   head: [
     ['link',
       {

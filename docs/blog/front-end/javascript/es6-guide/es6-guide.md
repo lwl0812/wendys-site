@@ -16,4 +16,5 @@ public: true
 ## - [05. 字符串的新增方法](05.string-methods.md)
 ## - [06. 正则的扩展](06.regular-expression.md)
 ## - [07. 数值的扩展](07.number.md)
+## - [08. 函数的扩展](08.function.md)
 ## - [13. Proxy](13.proxy.md)

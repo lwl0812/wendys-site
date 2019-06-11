@@ -17,4 +17,5 @@ public: true
 ## - [06. 正则的扩展](06.regular-expression.md)
 ## - [07. 数值的扩展](07.number.md)
 ## - [08. 函数的扩展](08.function.md)
+## - [09. 数组的扩展](09.array.md)
 ## - [13. Proxy](13.proxy.md)

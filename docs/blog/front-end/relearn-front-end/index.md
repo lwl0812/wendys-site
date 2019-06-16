@@ -9,4 +9,5 @@ public: true
 
 # 重学前端学习笔记
 
-## - [01. 学习路线和方法](01.target-and-learning-way)
+## - [01. 学习路线和方法](01.target-and-learning-way.md)
+## - [02. 知识架构图](02.knowledge-system.md)

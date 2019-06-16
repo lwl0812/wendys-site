@@ -34,7 +34,10 @@ let routerNameMap = {
   'vscode': 'vscode',
   'develop-related': '开发相关',
   'effective-front-end': '高效前端学习笔记',
-  'interview-related': '面试相关'
+  'interview-related': '面试相关',
+  'leet-code': 'Leetcode算法',
+  'knowledge-system': '前端知识体系',
+  'relearn-front-end': '重学前端',
 }
 
 const fileTraverse = (filePath) => {

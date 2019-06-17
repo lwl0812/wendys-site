@@ -14,6 +14,10 @@ public: true
 ### - [01. 学习路线和方法](01.target-and-learning-way.md)
 ### - [02. 知识架构图](02.knowledge-system.md)
 
+## JavaScript 部分
+
+### - [03. JavaScript 类型](03.javascript-type.md)
+
 ## HTML、CSS 部分
 
 ### - [18. HTML 语义1——div和span不是够用了吗？](18.html-semantics.md)

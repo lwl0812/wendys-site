@@ -17,6 +17,7 @@ public: true
 ## JavaScript 部分
 
 ### - [03. JavaScript 类型](03.javascript-type.md)
+### - [04. JavaScript 对象](04.javascript-object.md)
 
 ## HTML、CSS 部分
 

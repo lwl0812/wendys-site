@@ -18,6 +18,7 @@ public: true
 
 ### - [03. JavaScript 类型](03.javascript-type.md)
 ### - [04. JavaScript 对象](04.javascript-object.md)
+### - [05. JavaScript 对象 -- 我们真的需要模拟类吗？](05.javascript-object2.md)
 
 ## HTML、CSS 部分
 

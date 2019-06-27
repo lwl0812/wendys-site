@@ -19,4 +19,5 @@ public: true
 ## - [08. 函数的扩展](08.function.md)
 ## - [09. 数组的扩展](09.array.md)
 ## - [10. 对象的扩展](10.object.md)
-## - [13. Proxy](13.proxy.md)
+## - [11. 对象的新增方法](11.object-functions.md)
+## - [14. Proxy](14.proxy.md)

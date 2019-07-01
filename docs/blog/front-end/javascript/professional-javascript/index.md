@@ -17,4 +17,4 @@ public: true
 - 函数
 
 ## [3.1 语法](./03/01.syntax.md)
-
+## [3.2 关键字和保留字](./03/02.keyword-reserved-word.md)

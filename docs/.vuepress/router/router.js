@@ -1,15 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const currentPath = __dirname;
-const marked = require( "marked" );
+const marked = require('marked');
 var yamlFront = require('yaml-front-matter');
 
 //解析需要遍历的文件夹，我这以E盘根目录为例
 const targetFilePath = path.resolve('./docs/blog/');
 
-console.log(targetFilePath, 9999)
-
-const _isMarkdownFile = (fileName) => {
+const _isMarkdownFile = fileName => {
   const pattern = /.*\.md$/g;
   // console.log(pattern.test(fileName), fileName)
   return pattern.test(fileName);
@@ -18,29 +16,30 @@ const _isMarkdownFile = (fileName) => {
 const _getDirArray = (fileDir, currentPath) => {
   const newFileDir = fileDir.replace(currentPath, '');
   return newFileDir.split('/');
-}
+};
 
 let router = [
-  { 
+  {
     text: '首页',
-    link: '/'
+    link: '/',
   },
 ];
 let routerNameMap = {
   'front-end': '前端相关',
   'other-resources': '其他资源',
-  'javascript': 'JavaScript',
-  'tools': '工具类',
-  'vscode': 'vscode',
+  javascript: 'JavaScript',
+  tools: '工具类',
+  vscode: 'vscode',
   'develop-related': '开发相关',
   'effective-front-end': '高效前端学习笔记',
   'interview-related': '面试相关',
   'leet-code': 'Leetcode算法',
   'knowledge-system': '前端知识体系',
   'relearn-front-end': '重学前端',
-}
+  'teach-yourself-regular-expression-in-10-minutes': '正则表达式必知必会',
+};
 
-const fileTraverse = (filePath) => {
+const fileTraverse = filePath => {
   // 根据文件路径读取文件，返回文件列表
   const files = fs.readdirSync(filePath);
   // 遍历读取到的文件列表
@@ -51,10 +50,10 @@ const fileTraverse = (filePath) => {
     let stats = fs.statSync(fileDir);
     var isFile = stats.isFile(); // 是文件
     var isDir = stats.isDirectory(); // 是文件夹
-    if(isFile && _isMarkdownFile(fileName)){
+    if (isFile && _isMarkdownFile(fileName)) {
       const content = yamlFront.loadFront(fs.readFileSync(fileDir));
       const dirArray = _getDirArray(fileDir, targetFilePath);
-      const indexMap = {}
+      const indexMap = {};
       let _router = router;
       let concatLink = '/blog';
       let text;
@@ -63,7 +62,8 @@ const fileTraverse = (filePath) => {
           if (dir) {
             let link = `/${dir}`;
             concatLink += link;
-            if (index === 1) { // 第一个
+            if (index === 1) {
+              // 第一个
               const _index = _router.findIndex(r => r.link === concatLink);
               if (_index > -1) {
                 _router = _router[_index];
@@ -76,7 +76,8 @@ const fileTraverse = (filePath) => {
                 _router = _router[_router.length - 1];
               }
             }
-            if (index === 2) { // 第二个
+            if (index === 2) {
+              // 第二个
               const _index = _router.items.findIndex(r => r.link === concatLink);
               if (_index > -1) {
                 _router = _router.items[_index];
@@ -89,7 +90,8 @@ const fileTraverse = (filePath) => {
                 _router = _router.items[_router.items.length - 1];
               }
             }
-            if (index === dirArray.length - 1) { // 最后一个
+            if (index === dirArray.length - 1) {
+              // 最后一个
               text = content._title;
               const _index = _router.items.findIndex(r => r.link === concatLink);
               if (_index < 0 && text) {
@@ -100,7 +102,7 @@ const fileTraverse = (filePath) => {
               }
             }
           }
-          
+
           // if (dir) {
           //   let link;
           //   if (index !== dirArray.length - 1) { // 不是最后一个
@@ -111,7 +113,7 @@ const fileTraverse = (filePath) => {
           //     text = content._title;
           //   }
           //   concatLink += link;
-            
+
           //   if (index === 1) {
           //     const _index = _router.findIndex(r => r.link === concatLink);
           //     if (_index > -1) {
@@ -142,8 +144,8 @@ const fileTraverse = (filePath) => {
         });
       }
     }
-    if(isDir){
-      fileTraverse(fileDir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件
+    if (isDir) {
+      fileTraverse(fileDir); //递归，如果是文件夹，就继续遍历该文件夹下面的文件
     }
   });
 };
@@ -152,7 +154,7 @@ fileTraverse(targetFilePath);
 
 module.exports = {
   router,
-}
+};
 
 // function readdir(filePath) {
 //   return new Promise((resolve,reject)=>{

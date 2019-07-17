@@ -10,6 +10,7 @@
 
 * [ES6 学习笔记](https://lwl0812.github.io/wendys-site/blog/front-end/javascript/es6-guide/es6-guide.html)
 * [你不知道的 JavaScript](https://lwl0812.github.io/wendys-site/blog/front-end/javascript/you-dont-know-js/you-dont-know-js.html)
+* [正则表达式必知必会](https://lwl0812.github.io/wendys-site/blog/front-end/javascript/teach-yourself-regular-express-in-10-minutes/guide.html)
 
 -----
 

@@ -13,3 +13,4 @@ public: true
 ## [第二章 匹配单个字符](02.character-match.md)
 ## [第三章 匹配一组字符](03.group-character-match.md)
 ## [第四章 使用元字符](04.meta-character.md)
+## [第五章 重复匹配](05.repeat-match.md)

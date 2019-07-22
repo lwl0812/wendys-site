@@ -37,6 +37,8 @@ let routerNameMap = {
   'knowledge-system': '前端知识体系',
   'relearn-front-end': '重学前端',
   'teach-yourself-regular-expression-in-10-minutes': '正则表达式必知必会',
+  'source-code': '源码阅读',
+  lodash: 'lodash',
 };
 
 const fileTraverse = filePath => {

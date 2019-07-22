@@ -7,7 +7,9 @@ tag: JavaScript
 public: true
 ---
 
-# 第3章 基本概念
+# JavaScript 高级教程
+
+## 第3章 基本概念
 
 本章内容：
 
@@ -16,6 +18,10 @@ public: true
 - 流控制语句
 - 函数
 
-## [3.1 语法](./03/01.syntax.md)
-## [3.2 关键字和保留字](./03/02.keyword-reserved-word.md)
-## [3.5 操作符](./03/05.operators.md)
+### [3.1 语法](./03/01.syntax.md)
+### [3.2 关键字和保留字](./03/02.keyword-reserved-word.md)
+### [3.5 操作符](./03/05.operators.md)
+
+## 第6章 面向对象的程序设计
+
+### [6.1 理解对象](./06/01.object.md)

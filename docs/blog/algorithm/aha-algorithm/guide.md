@@ -12,3 +12,4 @@ public: true
 ## 排序
 
 ### - [桶排序](01.sort/01.bucket-sort.md)
+### - [冒泡排序](01.sort/02.bubble-sort.md)

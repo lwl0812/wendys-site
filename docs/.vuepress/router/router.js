@@ -39,6 +39,11 @@ let routerNameMap = {
   'teach-yourself-regular-expression-in-10-minutes': '正则表达式必知必会',
   'source-code': '源码阅读',
   lodash: 'lodash',
+  algorithm: '算法',
+  'aha-algorithm': '啊哈，算法',
+  english: '英语学习',
+  'tem8-high-frequency-vocabulary': '八级高频词汇',
+  'computer-lexicon': '计算机词汇'
 };
 
 const fileTraverse = filePath => {

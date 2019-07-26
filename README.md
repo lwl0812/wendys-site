@@ -23,7 +23,11 @@
 
 ### 源码阅读
 
-* [lodash](./docs/blog/source-code/lodash/00.guide.md)
+* [lodash](https://lwl0812.github.io/wendys-site/blog/source-code/lodash/00.guide.html)
+
+### 算法
+
+* [啊哈算法](https://lwl0812.github.io/wendys-site/blog/algorithm/aha-algorithm/guide.html)
 
 ### 面试题汇总
 
@@ -59,3 +63,4 @@
 * [2019 前端面试 | “HTML + CSS + JS”专题](https://zhuanlan.zhihu.com/p/65798950)
 * [强烈推荐 GitHub 上值得前端学习的开源实战项目](https://zhuanlan.zhihu.com/p/69268226)
 * [面试官，请别再问我3次握手与4次挥手了](https://zhuanlan.zhihu.com/p/73467254)
+* [科普一下 CORS 以及如何节省一次 OPTIONS 请求](https://zhuanlan.zhihu.com/p/70032617)

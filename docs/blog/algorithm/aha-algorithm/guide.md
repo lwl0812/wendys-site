@@ -13,3 +13,4 @@ public: true
 
 ### - [桶排序](01.sort/01.bucket-sort.md)
 ### - [冒泡排序](01.sort/02.bubble-sort.md)
+### - [快速排序](01.sort/03.quick-sort.md)

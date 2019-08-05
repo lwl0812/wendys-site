@@ -16,4 +16,5 @@ public: true
 ## [第五章 重复匹配](05.repeat-match.md)
 ## [第六章 位置匹配](06.position-match.md)
 ## [第七章 使用子表达式](07.subexpression.md)
+## [第八章 回溯引用：前后一致匹配](08.trackback.md)
 

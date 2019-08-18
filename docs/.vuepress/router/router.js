@@ -4,7 +4,7 @@ const currentPath = __dirname;
 const marked = require('marked');
 var yamlFront = require('yaml-front-matter');
 
-//解析需要遍历的文件夹，我这以E盘根目录为例
+//解析需要遍历的文件夹
 const targetFilePath = path.resolve('./docs/blog/');
 
 const _isMarkdownFile = fileName => {
@@ -43,7 +43,9 @@ let routerNameMap = {
   'aha-algorithm': '啊哈，算法',
   english: '英语学习',
   'tem8-high-frequency-vocabulary': '八级高频词汇',
-  'computer-lexicon': '计算机词汇'
+  'computer-lexicon': '计算机词汇',
+  vue: 'Vue',
+  'vue-source-code': 'Vue 源码揭秘笔记',
 };
 
 const fileTraverse = filePath => {

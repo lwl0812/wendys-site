@@ -46,6 +46,8 @@ let routerNameMap = {
   'computer-lexicon': '计算机词汇',
   vue: 'Vue',
   'vue-source-code': 'Vue 源码揭秘笔记',
+  'the-big-bang': '生活大爆炸',
+  'comic-algorithm': '漫画算法'
 };
 
 const fileTraverse = filePath => {

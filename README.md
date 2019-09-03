@@ -64,3 +64,6 @@
 * [强烈推荐 GitHub 上值得前端学习的开源实战项目](https://zhuanlan.zhihu.com/p/69268226)
 * [面试官，请别再问我3次握手与4次挥手了](https://zhuanlan.zhihu.com/p/73467254)
 * [科普一下 CORS 以及如何节省一次 OPTIONS 请求](https://zhuanlan.zhihu.com/p/70032617)
+* [[译文] JavaScript工作原理：内存管理+如何处理4种常见的内存泄露](https://juejin.im/post/5d4782646fb9a06aea617888)
+* [你必须懂的前端性能优化](https://mp.weixin.qq.com/s/L2D5xyu37rWtTWpkUaQa2w)
+* [利用"交叉观察者"轻松实现懒加载、吸顶、触底](https://juejin.im/post/5d665133e51d4561c83e7c83?utm_source=gold_browser_extension)

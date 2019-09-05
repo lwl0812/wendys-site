@@ -47,7 +47,8 @@ let routerNameMap = {
   vue: 'Vue',
   'vue-source-code': 'Vue 源码揭秘笔记',
   'the-big-bang': '生活大爆炸',
-  'comic-algorithm': '漫画算法'
+  'comic-algorithm': '漫画算法',
+  'beauty-of-data-structure-and-algorithm': '数据结构与算法之美',
 };
 
 const fileTraverse = filePath => {

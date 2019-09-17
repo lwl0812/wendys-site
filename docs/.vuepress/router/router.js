@@ -49,6 +49,8 @@ let routerNameMap = {
   'the-big-bang': '生活大爆炸',
   'comic-algorithm': '漫画算法',
   'beauty-of-data-structure-and-algorithm': '数据结构与算法之美',
+  http: 'HTTP',
+  'http-with-pics': '图解 HTTP',
 };
 
 const fileTraverse = filePath => {

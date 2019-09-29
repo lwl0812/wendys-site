@@ -13,3 +13,4 @@ public: true
 ## [响应式系统的基本原理](02.md)
 ## [响应式系统的依赖收集追踪原理](03.md)
 ## [实现 Virtual DOM 下的一个 VNode 节点](04.md)
+## [template 模板是怎样通过 Compile 编译的](05.md)

@@ -1,7 +1,7 @@
 ---
 home: true
 layout: home-layout
-userName: Wendy Lu
+userName: 狸子同学
 heroImage: /logo.png
 # actionText: 快速上手 →
 # actionLink: /zh/guide/

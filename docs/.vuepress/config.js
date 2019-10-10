@@ -2,19 +2,20 @@ const router = require('./router/router.js');
 
 module.exports = {
   base: '/wendys-site/',
-  title: 'lwl0812',
+  title: '狸子同学的秘密花园',
   head: [
-    ['link',
+    [
+      'link',
       {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
         crossorigin: 'anonymous',
         integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',
-      }
-    ]
+      },
+    ],
   ],
-  // description: '晴天&Sunny',
-  userName: 'Wendy Lu',
+  description: '狸子同学的秘密花园',
+  userName: '狸子同学',
   themeConfig: {
     displayAllHeaders: true,
     sidebar: 'auto',
@@ -26,5 +27,5 @@ module.exports = {
     //   ['/page-b', 'Explicit link text']
     // ],
     lastUpdated: 'Last Updated', // string | boolean
-  }
+  },
 };

@@ -51,6 +51,8 @@ let routerNameMap = {
   'beauty-of-data-structure-and-algorithm': '数据结构与算法之美',
   http: 'HTTP',
   'http-with-pics': '图解 HTTP',
+  'http-video': 'HTTP 协议原理和实践',
+  'html-css': 'HTML & CSS',
 };
 
 const fileTraverse = filePath => {
@@ -116,45 +118,6 @@ const fileTraverse = filePath => {
               }
             }
           }
-
-          // if (dir) {
-          //   let link;
-          //   if (index !== dirArray.length - 1) { // 不是最后一个
-          //     link = `/${dir}`;
-          //   }
-          //   else { // 最后一个
-          //     link = `/${dir}`;
-          //     text = content._title;
-          //   }
-          //   concatLink += link;
-
-          //   if (index === 1) {
-          //     const _index = _router.findIndex(r => r.link === concatLink);
-          //     if (_index > -1) {
-          //       _router = _router[_index];
-          //     } else {
-          //       _router.push({
-          //         text: routerNameMap[dir] || text,
-          //         link: concatLink,
-          //         items: [],
-          //       });
-          //       _router = _router[_router.length - 1];
-          //     }
-          //   }
-          //   else {
-          //     const _index = _router.items.findIndex(r => r.link === concatLink);
-          //     if (_index > -1) {
-          //       _router = _router.items[_index];
-          //     } else {
-          //       _router.items.push({
-          //         text: routerNameMap[dir] || text,
-          //         link: concatLink,
-          //         items: [],
-          //       });
-          //       _router = _router.items[_router.items.length - 1];
-          //     }
-          //   }
-          // }
         });
       }
     }

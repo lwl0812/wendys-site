@@ -53,6 +53,7 @@ let routerNameMap = {
   'http-with-pics': '图解 HTTP',
   'http-video': 'HTTP 协议原理和实践',
   'html-css': 'HTML & CSS',
+  'design-patterns': '设计模式',
 };
 
 const fileTraverse = filePath => {

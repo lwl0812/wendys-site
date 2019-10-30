@@ -23,4 +23,5 @@ public: true
 ## - [12. Symbol](12.symbol.md)
 ## - [13. Set 和 Map 数据结构](13.set-map.md)
 ## - [14. Proxy](14.proxy.md)
-## - [15. Reflect](14.reflect.md)
+## - [15. Reflect](15.reflect.md)
+## - [16. Promise](16.promise.md)
